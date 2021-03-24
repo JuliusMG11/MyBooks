@@ -1,27 +1,16 @@
 {
-  "name": "mybooks",
+  "name": "project1",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate",
-    "test:e2e": "wdio wdio.conf.js"
+    "generate": "nuxt generate"
   },
   "dependencies": {
-    "bootstrap": "^4.6.0",
-    "bootstrap-vue": "^2.21.2",
     "core-js": "^3.8.3",
     "nuxt": "^2.14.12"
   },
-  "devDependencies": {
-    "@wdio/cli": "^6.12.1",
-    "@wdio/local-runner": "^6.12.1",
-    "@wdio/mocha-framework": "^6.11.0",
-    "@wdio/spec-reporter": "^6.11.0",
-    "@wdio/sync": "^6.11.0",
-    "eslint-plugin-wdio": "^6.6.0",
-    "webdriverio": "^6.12.1"
-  }
+  "devDependencies": {}
 }
