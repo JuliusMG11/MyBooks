@@ -1,6 +1,8 @@
 {
-  "name": "project1",
+  "name": "nuxt-course",
   "version": "1.0.0",
+  "description": "Nuxt.js course for Udemy",
+  "author": "Maximilian Schwarzmüller",
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -9,8 +11,12 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "core-js": "^3.8.3",
-    "nuxt": "^2.14.12"
+    "@nuxtjs/axios": "^5.13.1",
+    "axios": "^0.17.1",
+    "firebase": "^8.3.2",
+    "nuxt": "^1.0.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "cross-env": "^5.0.1"
+  }
 }

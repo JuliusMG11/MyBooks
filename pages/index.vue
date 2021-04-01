@@ -1,31 +1,29 @@
 <template>
-    <div class="home-page">
-        <section class="intro">
-          <h1>Get the latest tech news!</h1>
-        </section>
-      
-        <section class="featured-posts">
-
-          <PostList />
-
-        </section>
-    </div>
+  <div class="home-page">
+    <section class="intro">
+      <h1>Get the latest tech news!</h1>
+    </section>
+    <PostList :posts="loadedPosts" />
+  </div>
 </template>
 
 <script>
-import PostPreview from '../components/Posts/PostPreview.vue'
-import PostList from '../components/Posts/PostList.vue'
-
 
 export default {
 
-  components: {
-    PostPreview,
-    PostList
+  computed: {
+    loadedPosts() {
+      return this.$store.getters.loadedPosts
+    }
   }
-
-}
+  // data() {
+  //   return {
+  //     loadedPosts: []
+  //   };
+  // },
+};
 </script>
+
 
 <style scoped>
 .intro {
@@ -33,7 +31,7 @@ export default {
   position: relative;
   padding: 30px;
   box-sizing: border-box;
-  background-image: url('~assets/images/main_image.jpg');
+  background-image: url("~assets/images/main-page-background.jpg");
   background-position: center;
   background-size: cover;
 }
@@ -66,41 +64,5 @@ export default {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-}
-
-.post-preview {
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 2px #ccc;
-  background-color: white;
-  width: 90%;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-}
-
-@media (min-width: 850px) {
-  .post-preview {
-    width: 400px;
-    margin: 10px;
-  }
-}
-
-.post-thumbnail {
-  width: 100%;
-  height: 200px;
-  background-position: center;
-  background-size: cover;
-}
-
-.post-content {
-  padding: 10px;
-  text-align: center;
-}
-
-a:hover .post-content,
-a:active .post-content {
-  background-color: #ccc;
 }
 </style>
