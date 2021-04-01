@@ -1,43 +1,81 @@
-export default {
-  // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
-  ssr: false,
+const pkg = require('./package')
 
-  // Global page headers: https://go.nuxtjs.dev/config-head
+module.exports = {
+  mode: 'universal',
+
+  /*
+  ** Headers of the page
+  */
   head: {
-    title: 'project1',
-    htmlAttrs: {
-      lang: 'en'
-    },
+    title: pkg.name,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: "https://fonts.googleapis.com/css?family=Open+Sans" }
     ]
   },
+ 
+  /*
+  ** Customize the progress-bar color
+  */
+  loading: { color: '#3B8070', height: '4px' },
+  loadingIndicator: {
+    name: 'circle',
+    color: '#fa923f'
 
-  // Global CSS: https://go.nuxtjs.dev/config-css
+  },
+
+  /*
+  ** Global CSS
+  */
   css: [
+      '~assets/styles/main.css'
   ],
 
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
+  /*
+  ** Plugins to load before mounting the App
+  */
   plugins: [
+    '~plugins/core-components.js',
+    '~plugins/date-filter.js'
   ],
 
-  // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
-
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-  ],
-
-  // Modules: https://go.nuxtjs.dev/config-modules
+  /*
+  ** Nuxt.js modules
+  */
   modules: [
+    '@nuxtjs/axios'
   ],
 
-  // Build Configuration: https://go.nuxtjs.dev/config-build
+  axios: {
+    baseURL: process.env.BASE_URL || 'https://nuxt-blog-1bfc5-default-rtdb.firebaseio.com',
+    credentials: false
+  },
+
+  /*
+  ** Build configuration
+  */
   build: {
-  }
+    /*
+    ** You can extend webpack config here
+    */
+    extend(config, ctx) {
+
+    }
+  },
+  env: {
+    baseUrl: process.env.BASE_URL || 'https://nuxt-blog-1bfc5-default-rtdb.firebaseio.com'
+ // router: {
+   //linkActiveClass: 'active'
+   // 
+  },
+  transition: {
+      name: 'fade',
+      mode: 'out-in'
+   }
+
 }
