@@ -1,10 +1,17 @@
 <template>
-  <div class="home-page">
-    <section class="intro">
-      <h1>Get the latest tech news!</h1>
-    </section>
-    <PostList :posts="loadedPosts" />
-  </div>
+    <v-container
+      name="container"
+    >
+          <div class="home-page">
+            
+            <section class="intro">
+              <h1>Scike tvoje knihy
+                na jednom mieste</h1>
+            </section>
+            <PostList :posts="loadedPosts" />
+          </div>
+    
+    </v-container>
 </template>
 
 <script>
@@ -27,11 +34,11 @@ export default {
 
 <style scoped>
 .intro {
-  height: 300px;
+  height: 500px;
   position: relative;
   padding: 30px;
   box-sizing: border-box;
-  background-image: url("~assets/images/main-page-background.jpg");
+  background-image: linear-gradient(to bottom, #dd2476, #ff512f);
   background-position: center;
   background-size: cover;
 }

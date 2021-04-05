@@ -33,7 +33,9 @@ module.exports = {
   ** Global CSS
   */
   css: [
-      '~assets/styles/main.css'
+    // Load a Node.js module directly (here it's a Sass file)
+      '~assets/styles/main.css',
+
   ],
 
   /*
@@ -41,7 +43,9 @@ module.exports = {
   */
   plugins: [
     '~plugins/core-components.js',
-    '~plugins/date-filter.js'
+    '~plugins/date-filter.js',
+    '~plugins/firebase.js',
+    '~plugins/vuetify.js'
   ],
 
   /*
@@ -49,6 +53,13 @@ module.exports = {
   */
   modules: [
     '@nuxtjs/axios'
+  ],
+  buildModules: [
+    // Simple usage
+    '@nuxtjs/vuetify',
+
+    // With options
+    ['@nuxtjs/vuetify', { /* module options */ }]
   ],
 
   axios: {
@@ -63,10 +74,16 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
+    loaders: {
+      sass: {
+          prependData: "@import '~bulma/sass/utilities/_all.sass;",
+        }
+      },
     extend(config, ctx) {
 
     }
   },
+  
   env: {
     baseUrl: process.env.BASE_URL || 'https://nuxt-blog-1bfc5-default-rtdb.firebaseio.com'
  // router: {
