@@ -6,6 +6,33 @@
       v-bind="$attrs"
       :value="value"
       @input="$emit('input', $event.target.value)">
+
+     <!--<input
+        v-if="controlType === 'file'"
+  
+        type="file"
+        :value="value"
+        @input="$emit('input', $event.target.value)">
+        -->
+  
+      <textarea
+      v-if="controlType === 'type'"
+      rows="1"
+      :value="value"
+      @input="$emit('input', $event.target.value)"></textarea>
+
+      <select  
+          multiple 
+          v-if="controlType === 'select'" 
+          @input="$emit('input', $event.target.value)">
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+      </select>
+      
+
+      
+
     <textarea
       v-if="controlType === 'textarea'"
       rows="10"

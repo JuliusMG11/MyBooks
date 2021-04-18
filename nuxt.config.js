@@ -15,8 +15,10 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: "https://fonts.googleapis.com/css?family=Open+Sans" }
+      { rel: 'stylesheet', href: "https://fonts.googleapis.com/css?family=Open+Sans" },
+      {  rel: 'stylesheet', href: "https://fonts.googleapis.com/css2?family=Calistoga&display=swap" },
     ]
+    
   },
  
   /*
@@ -36,7 +38,11 @@ module.exports = {
     // Load a Node.js module directly (here it's a Sass file)
       '~assets/styles/main.css',
 
+      // SCSS file in the project
+      
   ],
+  
+  
 
   /*
   ** Plugins to load before mounting the App
@@ -52,15 +58,16 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
   ],
-  buildModules: [
-    // Simple usage
-    '@nuxtjs/vuetify',
 
-    // With options
-    ['@nuxtjs/vuetify', { /* module options */ }]
+  
+  buildModules: [
+    '@nuxtjs/vuetify'
   ],
+  vuetify: {
+    customVariables: ['~/assets/styles/base.scss']
+  },
 
   axios: {
     baseURL: process.env.BASE_URL || 'https://nuxt-blog-1bfc5-default-rtdb.firebaseio.com',

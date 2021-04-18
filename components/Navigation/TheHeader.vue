@@ -30,9 +30,6 @@ export default {
 
 
 <style scoped>
-.header-container {
-  height: 60px;
-}
 
 .the-header {
   width: 100%;

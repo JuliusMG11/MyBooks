@@ -1,6 +1,6 @@
 <template>
   <nuxt-link :to="postLink" class="post-preview">
-    <article>
+    <v-card>
       <div
         class="post-thumbnail"
         :style="{backgroundImage: 'url(' + thumbnail + ')'}"></div>
@@ -8,7 +8,7 @@
         <h1>{{ title }}</h1>
         <p>{{ previewText }}</p>
       </div>
-    </article>
+   </v-card>
   </nuxt-link>
 </template>
 
@@ -47,10 +47,13 @@ export default {
 
 
 <style scoped>
+
+.theme--light.v-card {
+  background-color: transparent;
+}
+
 .post-preview {
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 2px #ccc;
-  background-color: white;
+
   width: 90%;
 }
 
@@ -61,16 +64,17 @@ a {
 
 @media (min-width: 850px) {
   .post-preview {
-    width: 400px;
+    width: 350px;
     margin: 10px;
   }
 }
 
 .post-thumbnail {
   width: 100%;
-  height: 200px;
+  height: 340px;
   background-position: center;
-  background-size: cover;
+  background-size: contain;
+
 }
 
 .post-content {
@@ -81,5 +85,10 @@ a {
 a:hover .post-content,
 a:active .post-content {
   background-color: #ccc;
+}
+
+.theme--light.v-sheet {
+  border: none;
+  box-shadow: unset;
 }
 </style>

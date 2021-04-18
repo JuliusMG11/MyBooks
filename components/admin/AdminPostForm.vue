@@ -3,8 +3,14 @@
     <AppControlInput v-model="editedPost.author">Author Name</AppControlInput>
     <AppControlInput v-model="editedPost.title">Title</AppControlInput>
     <AppControlInput v-model="editedPost.thumbnail">Thumbnail Link</AppControlInput>
+         <AppControlInput
+      control-type="select"
+      v-model="editedPost.category">Category</AppControlInput>
+
+    
+
     <AppControlInput
-      control-type="textarea"
+      control-type="type"
       v-model="editedPost.content">Content</AppControlInput>
     <AppControlInput
       control-type="textarea"
@@ -35,6 +41,8 @@ export default {
             author: "",
             title: "",
             thumbnail: "",
+          //  image: "",
+            category: "",
             content: "",
             previewText: ""
           }
