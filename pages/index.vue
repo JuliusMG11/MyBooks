@@ -8,8 +8,7 @@
                     <v-row>
                       <v-col>
                         <div class="intro-title">
-                            <h1 id="title">Find your book
-                                and lose yourself
+                            <h1 id="title">Najdi si tu pravú knižku
                             </h1>
 
                               <div class="intro-search">
@@ -25,26 +24,35 @@
                         <slider-image />
                       </v-col>
                     </v-row>
-                  <v-row>
-                    <v-col>
-                      <div class="intro-image1">
-                          <img src="~/assets/images/object.png" alt="">
-                      </div>
+                
+                     <v-row >
+                       <v-col class="text-content">
+                    <h2>Aj také tu máme</h2>
+                    <p>Programovanie, Marketing, Dizajn, Ebooks, Ľudia</p>
                     </v-col>
-                    <v-col>
 
+
+                       <v-col class="slider-row">
+                         <div class="slider-container">
+                           
                          <new-test />
 
+                    </div>
                     </v-col>
                   </v-row>
+              
+                  </v-container>
+            </section>
+
+            <section>
+              <v-container>
+                  
                   <PostList 
                     :posts="loadedPosts" 
                   />
-                  
+              </v-container>
 
-                  
-              
-                  </v-container>
+
             </section>
             
           </div>
@@ -62,7 +70,8 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 export default {
   components: {
     SliderImage,
-    newTest
+    newTest,
+   
   },
   computed: {
     loadedPosts() {
@@ -178,4 +187,22 @@ export default {
         top: -40px;
     }
 
+.slider-row {
+  justify-content: center;
+}
+
+.slider-container {
+  margin-top: 50px;
+  padding-bottom: 50px;
+  width: 100%;
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.text-content p {
+  font-size: 22px;
+}
 </style>

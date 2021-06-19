@@ -1,21 +1,25 @@
 <template>
+  <div>
+      <div class="mini-slider">
+            <a @click="prev" class="prev-button">Previous</a> || <a @click="next">Next</a>
+            <transition-group name='fade' tag='div'>
+                  <div
+                  v-for="number in [currentNumber]"
+                  :key='number'
+                  >
+                  <img
+                  :src="currentImage"
+                
+                  />
+                  </div>
+                  
 
-<div>
-      <a @click="prev">Previous</a> || <a @click="next">Next</a>
-       <transition-group name='fade' tag='div'>
-            <div
-            v-for="number in [currentNumber]"
-            :key='number'
-            >
-            <img
-            :src="currentImage"
-            v-on:mouseover="stopRotation"
-            v-on:mouseout="startRotation"
-            />
-            </div>
-        </transition-group>
-</div>
+                  
 
+              </transition-group>
+      </div>
+
+  </div>
 </template>
 
 <script>
@@ -35,13 +39,15 @@ export default {
           'http://julo.posunemevasvys.cz/wp-content/uploads/2021/04/1617898663.png',
 
         ],
+       
+      
         currentNumber: 0,
         timer: null
 			}
 	},
 
 	mounted() {
-    this.startRotation();
+    
   },
 
   methods: {
@@ -78,11 +84,34 @@ export default {
  visibility: visible;
  opacity: 1;
  position: absolute;
+
+
 }
+
 .fade-enter, .fade-leave-to {
  opacity: 0;
  visibility: hidden;
+
 }
 
+.fade-enter {
+  transform: translateX(20px);
+}
+
+
+.mini-slider {
+  position: relative;
+  height: 600px;
+  width: 100%;
+
+}
+
+.mini-slider img {
+  max-width: 400px;
+}
+
+.prev-button {
+   
+}
 
 </style>
