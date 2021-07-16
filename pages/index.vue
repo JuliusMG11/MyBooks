@@ -20,10 +20,12 @@
 
                         </div>
                       </v-col>
-                      <v-col>
-                        <slider-image />
-                      </v-col>
+                    
                     </v-row>
+                  </v-container>
+            </section>
+
+                  <v-container>
                 
                      <v-row >
                        <v-col class="text-content">
@@ -35,14 +37,14 @@
                        <v-col class="slider-row">
                          <div class="slider-container">
                            
-                         <new-test />
+                        
 
                     </div>
                     </v-col>
                   </v-row>
               
                   </v-container>
-            </section>
+
 
             <section>
               <v-container>
@@ -61,16 +63,14 @@
 </template>
 
 <script>
-import SliderImage from '../components/SliderImage.vue'
-import newTest from '../components/newTest.vue'
+
 
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 
 export default {
   components: {
-    SliderImage,
-    newTest,
+    
    
   },
   computed: {
@@ -134,14 +134,14 @@ export default {
 
 
 <style  scoped>
-.intro {
-  height: 100vh;
+
+
+.home-page {
+  width: 80%;
+  left: 20%;
   position: relative;
-  padding: 30px;
-  box-sizing: border-box;
-  background-position: center;
-  background-size: cover;
-  background-image: url('~assets/images/slider-object.svg')
+
+  
 }
 
 .intro h1 {
@@ -163,11 +163,6 @@ export default {
 }
 
 .intro-search[input]
-
-.home-page {
-  background-image: linear-gradient(to bottom, #fff, #407bff);
-  
-}
 
 
 .featured-posts {

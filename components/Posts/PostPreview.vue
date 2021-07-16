@@ -64,7 +64,7 @@ a {
 
 @media (min-width: 850px) {
   .post-preview {
-    width: 350px;
+    width: 250px;
     margin: 10px;
   }
 }
