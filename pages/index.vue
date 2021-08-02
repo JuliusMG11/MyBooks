@@ -37,7 +37,7 @@
                        <v-col class="slider-row">
                          <div class="slider-container">
                            
-                        
+                           <test-b :postCategory="loadedPostCategory" />
 
                     </div>
                     </v-col>
@@ -67,16 +67,22 @@
 
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import TestB from '../components/testB.vue';
+
 
 export default {
   components: {
-    
+    TestB
+     
    
   },
   computed: {
     loadedPosts() {
       return this.$store.getters.loadedPosts
     },
+    loadedPostCategory() {
+      return this.$store.getters.loadedPosts
+    }
   
   },
 
