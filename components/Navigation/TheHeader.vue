@@ -3,12 +3,11 @@
   <header class="the-header">
     <TheSideNavToggle @toggle="$emit('sidenavToggle')" />
     <div class="logo">
-      <nuxt-link to="/">WD BLOG</nuxt-link>
+      <nuxt-link to="/">My books</nuxt-link>
     </div>
-    <div class="spacer"></div>
     <div class="navigation-items">
       <ul class="nav-list">
-        <li class="nav-item"><nuxt-link to="/posts">Blog</nuxt-link></li>
+        <li class="nav-item"><nuxt-link to="/posts">Books</nuxt-link></li>
         <li class="nav-item"><nuxt-link to="/about">About</nuxt-link></li>
         <li class="nav-item"><nuxt-link to="/admin">Admin</nuxt-link></li>
       </ul>
@@ -30,18 +29,15 @@ export default {
 
 
 <style scoped>
-.header-container {
-  height: 60px;
-}
 
 .the-header {
-  width: 100%;
+  width: 20%;
   position: fixed;
-  height: 60px;
+  height: 100vh;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: black;
+  align-items: start;
+  flex-direction: column;
+  background: #006BBB;
   z-index: 100;
   box-sizing: border-box;
   padding: 0 20px;
@@ -57,9 +53,6 @@ export default {
   color: white;
 }
 
-.spacer {
-  flex: 1;
-}
 
 .navigation-items {
   display: none;
@@ -75,11 +68,11 @@ export default {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
 }
 
 .nav-item {
   margin: 0 10px;
+  padding-top:10px;
 }
 
 .nav-item a {

@@ -15,8 +15,10 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: "https://fonts.googleapis.com/css?family=Open+Sans" }
+      { rel: 'stylesheet', href: "https://fonts.googleapis.com/css?family=Open+Sans" },
+      {  rel: 'stylesheet', href: "https://fonts.googleapis.com/css2?family=Calistoga&display=swap" },
     ]
+    
   },
  
   /*
@@ -33,23 +35,39 @@ module.exports = {
   ** Global CSS
   */
   css: [
-      '~assets/styles/main.css'
+    // Load a Node.js module directly (here it's a Sass file)
+      '~assets/styles/main.css',
+
+      // SCSS file in the project
+      
   ],
+  
+  
 
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
     '~plugins/core-components.js',
-    '~plugins/date-filter.js'
+    '~plugins/date-filter.js',
+    '~plugins/firebase.js',
+    '~plugins/vuetify.js'
   ],
 
   /*
   ** Nuxt.js modules
   */
   modules: [
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
   ],
+
+  
+  buildModules: [
+    '@nuxtjs/vuetify'
+  ],
+  vuetify: {
+    customVariables: ['~/assets/styles/base.scss']
+  },
 
   axios: {
     baseURL: process.env.BASE_URL || 'https://nuxt-blog-1bfc5-default-rtdb.firebaseio.com',
@@ -63,10 +81,16 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
+    loaders: {
+      sass: {
+          prependData: "@import '~bulma/sass/utilities/_all.sass;",
+        }
+      },
     extend(config, ctx) {
 
     }
   },
+  
   env: {
     baseUrl: process.env.BASE_URL || 'https://nuxt-blog-1bfc5-default-rtdb.firebaseio.com'
  // router: {

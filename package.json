@@ -1,8 +1,8 @@
 {
   "name": "nuxt-course",
   "version": "1.0.0",
-  "description": "Nuxt.js course for Udemy",
-  "author": "Maximilian Schwarzmüller",
+  "description": "Nuxt.js books",
+  "author": "Julius Petrik",
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -13,10 +13,19 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.13.1",
     "axios": "^0.17.1",
-    "firebase": "^8.3.2",
-    "nuxt": "^1.0.0"
+    "firebase": "^7.24.0",
+    "gsap": "^3.6.1",
+    "nuxt": "^1.0.0",
+    "vue-carousel-3d": "^1.0.1",
+    "vuetify": "^2.0.0"
   },
   "devDependencies": {
-    "cross-env": "^5.0.1"
+    "@mdi/font": "^5.9.55",
+    "@nuxtjs/style-resources": "^1.0.0",
+    "@nuxtjs/vuetify": "^1.11.3",
+    "cross-env": "^5.0.1",
+    "fibers": "^5.0.0",
+    "node-sass": "^5.0.0",
+    "sass-loader": "^11.0.1"
   }
 }

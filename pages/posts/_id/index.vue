@@ -3,6 +3,10 @@
     <section class="post">
       <h1 class="post-title">{{ loadedPost.title }}</h1>
       <div class="post-details">
+        <div
+        class="post-thumbnail"
+        :style="{backgroundImage: 'url(' + loadedPost.thumbnail + ')'}">
+        </div>
         <div class="post-detail">Last updated on {{ loadedPost.updatedDate | date }}</div>
         <div class="post-detail">Written by {{ loadedPost.author }}</div>
       </div>
@@ -12,6 +16,7 @@
       <p>Let me know what you think about the post, send a mail to <a href="mailto:feedback@my-awesome-domain.com">feedback@my-awesome-domain.com</a>.</p>
     </section>
   </div>
+  
 </template>
 
 <script>
@@ -60,6 +65,14 @@ export default {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.post-thumbnail {
+  width: 100%;
+  height: 340px;
+  background-position: center;
+  background-size: contain;
+
 }
 
 @media (min-width: 768px) {
