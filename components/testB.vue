@@ -1,37 +1,29 @@
 <template>
   <div>
-    <p>{{ data}}</p>
+    <TestPreview
+      v-for="post in posts"
+      :key="post.id"
+      :id="post.id"
+      :title="post.title"
+      :category="post.category"
+    />
   </div>
   
 </template>
 
 <script>
-import axios from 'axios'
+ import TestPreview from './TestPreview.vue'
 
 export default {
-    name:'testB',
-   
-   data() {
-      return {
-        data: null,
-        postsCategory: {
-            type: Array,
-            required: true
-          }
-
-      }
-    },
-
-   mounted() {
-      axios
-        .get('https://nuxt-blog-1bfc5-default-rtdb.firebaseio.com/posts.json')
-        .then(response => this.data = response);
-        console.log(this.data)
+  components: {
+    TestPreview
+  },
+  props: {
+    posts: {
+      type: Array,
+      required: true
     }
-    
-
-
-    
+  }
 
 }
 </script>

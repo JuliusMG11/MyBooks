@@ -37,7 +37,11 @@
                        <v-col class="slider-row">
                          <div class="slider-container">
                            
-                           <test-b :postCategory="loadedPostCategory" />
+                           <test-b 
+
+                              :posts="loadedPosts"
+
+                           />
 
                     </div>
                     </v-col>

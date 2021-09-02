@@ -1,6 +1,7 @@
 <template>
   <div class="posts-page">
     <PostList :posts="loadedPosts" />
+    
   </div>
 </template>
 
